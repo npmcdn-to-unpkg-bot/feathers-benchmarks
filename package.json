@@ -1,0 +1,32 @@
+{
+  "name": "feathers-benchmarks",
+  "version": "0.1.0",
+  "description": "A collection of Feathers benchmarks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node http-vs-sockets/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feathersjs/feathers-benchmarks.git"
+  },
+  "keywords": [
+    "feathersjs"
+  ],
+  "author": "hello@feathersjs.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feathersjs/feathers-benchmarks/issues"
+  },
+  "homepage": "https://github.com/feathersjs/feathers-benchmarks#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "feathers": "^2.0.1",
+    "feathers-errors": "^2.4.0",
+    "feathers-hooks": "^1.5.4",
+    "feathers-memory": "^0.7.3",
+    "feathers-rest": "^1.4.3",
+    "feathers-socketio": "^1.4.1"
+  }
+}
