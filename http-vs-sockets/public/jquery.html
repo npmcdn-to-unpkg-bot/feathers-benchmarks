@@ -16,39 +16,16 @@
   <script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
   <script type="text/javascript" src="//npmcdn.com/feathers-client@^1.1.0/dist/feathers.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
   <script type="text/javascript">
     // Set up REST
-    var rest = feathers.rest('http://localhost:3030');
+    var rest = feathers.rest();
     // Set up Feathers client side
     var app = feathers();
     // Register hooks module
     app.configure(feathers.hooks());
     // Register fetch
     app.configure(rest.jquery(jQuery));
-
-    var messages = app.service('messages');
-    
-    $(function() {
-      $('form').on('submit', function(ev) {
-        var requestNumber = parseInt($('#request-number').val(), 10);
-        var start = new Date().getTime();
-        var requests = [];
-
-        for(var i = 0; i < requestNumber; i++) {
-          requests.push(messages.create({
-            text: 'Message #' + i
-          }));
-        }
-
-        Promise.all(requests).then(() => {
-          var duration = new Date().getTime() - start;
-          console.log(requestNumber + ' requests took ' + duration + 'ms');
-        });
-
-        ev.preventDefault();
-      });
-    });
   </script>
 </body>
 </html>
